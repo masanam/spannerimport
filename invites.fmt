@@ -1,14 +1,14 @@
- 0,invite_id integer
- 1,entity_id integer
- 2,requester_id integer
- 3,inviter_id integer
- 4,type string
- 5,recipient string
- 6,referral_code string
- 7,status string
- 8,created_by integer
- 9,updated_by integer
- 10,deleted_by integer
- 11,created_at timestamp
- 12,updated_at timestamp
- 13,deleted_at timestamp
+0,invite_id integer
+1,entity_id integer
+2,requester_id integer
+3,inviter_id integer
+4,type string
+5,recipient string
+6,referral_code string
+7,status string
+8,created_by integer
+9,updated_by integer
+10,deleted_by integer
+11,created_at timestamp
+12,updated_at timestamp
+13,deleted_at timestamp
