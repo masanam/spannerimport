@@ -1,22 +1,16 @@
-CREATE TABLE invites (
-  invite_id STRING(36),
-  entity_id STRING(36),
-  requester_id STRING(36),
-  inviter_id STRING(36),  
-  type String(150) NOT NULL,
-  recipient String(150) NOT NULL,
-  referral_code String(150) ,
-  status String(150) NOT NULL,
-  created_by STRING(36),
-  updated_by STRING(36),
-  deleted_by STRING(36),
-  created_at TIMESTAMP NOT NULL,
-  updated_at TIMESTAMP NOT NULL OPTIONS (allow_commit_timestamp=true),
-  deleted_at TIMESTAMP,
-) PRIMARY KEY (invite_id);
-
-CREATE INDEX InvitesEntityId ON invites(entity_id);
-CREATE INDEX InvitesInviterId ON invites(inviter_id);
-CREATE INDEX InvitesReferralCode ON invites(referral_code);
-CREATE INDEX InvitesRecipient ON invites(recipient);
-CREATE INDEX InvitesRequesterId ON invites(requester_id);
+CREATE TABLE `invites` (
+  `invite_id` INT64 NOT NULL,
+  `entity_id` INT64 NOT NULL,
+  `requester_id` INT64 DEFAULT NULL,
+  `inviter_id` INT64 DEFAULT NULL,
+  `type` STRING(150) NOT NULL,
+  `recipient` STRING(150) NOT NULL,
+  `referral_code` STRING(150) DEFAULT NULL,
+  `status` STRING(150) NOT NULL,
+  `created_by` INT64 NOT NULL,
+  `updated_by` INT64 NOT NULL,
+  `deleted_by` INT64 DEFAULT NULL,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `deleted_at` TIMESTAMP DEFAULT NULL
+) PRIMARY KEY (invite_id)
